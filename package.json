@@ -1,0 +1,26 @@
+{
+  "name": "js-purrl-messenger-bot",
+  "version": "0.0.1",
+  "description": "A simple purrl media facebook messenger bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ejs": "2.3.3",
+    "express": "4.13.3",
+    "body-parser": "^1.15.0",
+    "request": "^2.71.0"
+  },
+  "engines": {
+    "node": "0.12.7"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express",
+    "purrl",
+    "media",
+    "chatbot"
+  ]
+}
