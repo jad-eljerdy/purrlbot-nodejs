@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var request = require('request');
 var app = express();
 
+var verifytoken = "purrlbot123";
 var token = "CAADJ7RwJtiMBAJfZBnpfiSXcUi0C6p6YFrcogJFhWpQ5Dd4HJ1iZCHOZAF8vWZB42L1qrrYSYSZCBzQPse77OfEsZCJyZCsTSpfCWjF9ld1BNb8Hli0rCplWUtbmeGX4GtvWX1iM3sWbzL9t9KSjPgk4ABgQiQ3ZBcilFwbsPFY3H0mlIJJiPg6m5somU6dx6TT91ZBqcnaZAI2QZDZD";
 
 app.use(bodyParser.json());
@@ -19,7 +20,7 @@ app.get('/', function(request, response) {
 
 
 app.get('/webhook', function (req, res) {
-  if (req.query['hub.verify_token'] === "purrlbot123") {
+  if (req.query['hub.verify_token'] === verifytoken) {
     res.send(req.query['hub.challenge']);
   } else {
     res.send('Error, wrong validation token');
@@ -72,8 +73,6 @@ function sendTextMessage(sender, text) {
     });
 
 }
-
-
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
