@@ -38,13 +38,13 @@ app.post('/webhook', function (req, res) {
 
         if (event.message && event.message.text) {
             var text = event.message.text;
-             //if (text === 'Generic') {
-                    sendGenericMessage(sender);
-              //       continue;
-              // }
-              // else {
-              //       sendTextMessage(sender, "Echo: " + text.substring(0, 200));
-              // }
+                //if (text === 'Generic') {
+                //    sendGenericMessage(sender);
+                //    continue;
+                //}
+                //else {
+                    sendTextMessage(sender, "Echo: " + text.substring(0, 200));
+                //}
         }
     }
 
